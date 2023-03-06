@@ -1,6 +1,6 @@
 import Interfaz
 
-class Producto(Interfaz):
+class Producto(Interfaz.Interfaz):
 
     def __init__(self,identificador, nombre, fechaPreparacion, precio,cantidad, marca, presentacion, refrigeracion, fechaCaducidad):
         super().__init__(identificador, nombre, fechaPreparacion)
