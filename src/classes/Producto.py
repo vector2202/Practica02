@@ -1,3 +1,4 @@
+import Interfaz
 import src.classes.Interfaz as Interfaz
 
 

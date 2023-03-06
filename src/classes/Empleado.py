@@ -1,7 +1,8 @@
+
 import Interfaz
 
 
-class Empleado(Interfaz):
+class Empleado(Interfaz.Interfaz):
 
     def __init__(self, identificador, nombre, fechaNacimiento, direccion, telefonos, correo, puesto, sucursal):
         super().__init__(identificador, nombre, fechaNacimiento, direccion, telefonos)
@@ -31,3 +32,6 @@ class Empleado(Interfaz):
 
     def __iter__(self):
         return iter([self.identificador, self.nombre, self.fechaNacimiento, self.direccion, self.telefonos, self.correos, self.puesto, self.sucursal])
+
+    def getSucursal(self):
+        return self.sucursal
