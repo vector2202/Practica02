@@ -1,5 +1,4 @@
 import Interfaz
-import src.classes.Interfaz as Interfaz
 
 
 class Producto(Interfaz):
