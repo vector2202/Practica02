@@ -3,7 +3,7 @@ import Interfaz
 import csv
 
 
-class Sucursal(Interfaz):
+class Sucursal(Interfaz.Interfaz):
 
     def __init__(self, identificador, nombre, fechaDeApertura, direccion, telefonos):
         super().__init__(identificador, nombre, fechaDeApertura, direccion, telefonos)
