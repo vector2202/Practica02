@@ -1,3 +1,4 @@
+import Interfaz
 
 class Producto(Interfaz):
 
