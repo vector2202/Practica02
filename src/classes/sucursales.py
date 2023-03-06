@@ -1,28 +1,9 @@
 import csv
-class Sucursales:
+class Sucursales(Interfaz):
     
-    def __init__(self,identificador, nombre, direccion, telefonos, fechaDeApaertura):
-        self.identificador = identificador
-        self.nombre = nombre 
-        self.direccion = direccion 
-        self.telefonos = telefonos 
-        self.fechaDeApaertura = fechaDeApaertura
+    def __init__(self,identificador, nombre,fechaDeApertura, direccion, telefonos):
+        super().__init__(identificador, nombre,fechaDeApertura,direccion, telefonos)
 
-    def getIdentificador(self):
-        return self.identificador
-        
-    def getNombre(self):
-        return self.nombre
-    
-    def getDireccion(self):
-        return self.direccion 
-        
-    def getTelefonos(self):
-        return self.telefonos
-
-    def getApertura(self):
-        return self.fechaDeApaertura
-    
     def getNumEmpleados(self):
         pass    
 
