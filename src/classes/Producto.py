@@ -32,9 +32,9 @@ class Producto(Interfaz.Interfaz):
         return self.fechaCaducidad
 
     def __str__(self):
-        return f'Identificador : {self.identificador}.\nNombre: {self.nombre}\nFechaPreparacio: {self.fechaPreparacion}\
+        return f'Identificador : {self.identificador}.\nNombre: {self.nombre}\nFechaPreparacio: {self.fecha}\
                 \nPrecio: {self.precio}\nCantidad: {self.cantidad}\nMarca: {self.marca}\nPresentacion: {self.presentacion}\
                 \nRefrigeracion: {self.refrigeracion}\nFechaCaducidad: {self.fechaCaducidad}'
 
     def __iter__(self):
-        return iter([self.identtificador, self.nombre, self.fechaPreparacion, self.precio, self.cantidad, self.marca, self.presentacion, self.refrigeracion, self.fechaCaducidad])
+        return iter([self.identificador, self.nombre, self.fecha, self.precio, self.cantidad, self.marca, self.presentacion, self.refrigeracion, self.fechaCaducidad])

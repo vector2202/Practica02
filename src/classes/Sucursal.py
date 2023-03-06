@@ -28,8 +28,8 @@ class Sucursal(Interfaz.Interfaz):
     def __str__(self):
         numeros = ''
         empleados = self.getNumEmpleados()
-        for numero in self.telefonos:
-            numeros += f'{numero}, '
+        #for numero in self.telefonos:
+        numeros += f'{numeros}, '
         return f'Identificador de la sucursal: {self.identificador}.\nNombre: {self.nombre}\nDireccion: {self.direccion}\
             \nTelefonos: {numeros}\nFecha de apertura: {self.fecha}\nNumero de empleados: {empleados}'
 
