@@ -1,5 +1,7 @@
+
 import Interfaz
 import csv
+
 class Sucursal(Interfaz.Interfaz):
     
     def __init__(self,identificador, nombre,fechaDeApertura, direccion, telefonos):
