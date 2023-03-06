@@ -1,4 +1,4 @@
-
+import csv
 class Sucursales:
     
     def __init__(self,identificador, nombre, direccion, telefonos, fechaDeApaertura):
@@ -25,6 +25,9 @@ class Sucursales:
     
     def getNumEmpleados(self):
         pass    
+
+    def numeroEmpleados(self):
+        pass
     
     def __str__(self):
         numeros = ''
