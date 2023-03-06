@@ -33,8 +33,3 @@ class Sucursal(Interfaz.Interfaz):
         return f'Identificador de la sucursal: {self.identificador}.\nNombre: {self.nombre}\nDireccion: {self.direccion}\
             \nTelefonos: {numeros}\nFecha de apertura: {self.fecha}\nNumero de empleados: {empleados}'
 
-# def main():
-#     G = Sucursal('S1', 'PP',1,'Peña',[4444])
-#     print(G)
-
-# main()
