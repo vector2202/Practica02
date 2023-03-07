@@ -8,11 +8,34 @@ from Producto import Producto
 from Sucursal import Sucursal
 
 def agregar(objeto, tipo):
+    '''
+    Funcion que permite agregar datos accediendo a nuestro archivo .csv
+
+    Parametros:
+    ----------
+
+    objeto
+    tipo
+
+    '''
     with open('' + str(tipo) + '.csv', 'a') as archivo:
         escritor = csv.writer(archivo)
         escritor.writerow(objeto)
         return
+
 def consultar(llave, objeto, tipo):
+    '''
+    Funcion que permite agregar consultar datos  accediendo a nuestro archivo .csv
+
+    Parametros:
+    ----------
+
+    objeto
+    tipo
+    llave
+
+    Devuelve el dato a consultar, en su defecto si no existe imprime que hubo un error por inexistencia del objeto.
+    '''
     with open('' + tipo + '.csv', 'r') as archivo:
         datos = csv.reader(archivo)
         for dato in datos:
@@ -28,6 +51,17 @@ def consultar(llave, objeto, tipo):
         print("Objeto no existe")
         return
 def eliminar(llave, objeto, tipo):
+    '''
+    Funcion que permite eliminar datos accediendo a nuestro archivo .csv
+
+    Parametros:
+    ----------
+
+    objeto
+    tipo
+    llave
+
+    '''
     datosAEscribir = []
     with open('' + tipo + '.csv', 'r') as archivo:
         datos = csv.reader(archivo)
@@ -45,6 +79,16 @@ def eliminar(llave, objeto, tipo):
         escritor.writerows(datosAEscribir)
     return
 def editar(llave, objeto, tipo):
+    '''
+    Funcion que permite editar datos accediendo a nuestro archivo .csv
+
+    Parametros:
+    ----------
+
+    objeto
+    tipo
+    llave
+    '''
     datosAEscribir = []
     with open('' + tipo + '.csv', 'r') as archivo:
         datos = csv.reader(archivo)
@@ -66,6 +110,7 @@ def editar(llave, objeto, tipo):
     return
 
 def obtenerTamano(tipo):
+    '''Metodo que nos devuelve el tamano de nuestro archivo .csv'''
     with open('' + tipo + '.csv', 'r') as archivo:
         datos = csv.reader(archivo)
         size = 0
