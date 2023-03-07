@@ -1,35 +1,56 @@
 
 import Interfaz
-import csv
-
 
 class Sucursal(Interfaz.Interfaz):
+    '''
+    Clase que representa la Sucursal
 
+    ...
+
+    Atributos
+    ---------
+    identificador: str
+    nombre: str
+    fechaDeApertura: str
+    direccion: str
+    telefonos: str
+
+    Metodos
+    -------
     def __init__(self, identificador, nombre, fechaDeApertura, direccion, telefonos):
         super().__init__(identificador, nombre, fechaDeApertura, direccion, telefonos)
-        self.numEmpleados = 0
 
-    def numeroEmpleados(self):
-        """ Realiza la lectura del archivo que contiene los empleados de la sucursal.
-        """
-        with open('../assets/Empleados.csv', mode='r') as file:
-            reader = csv.reader(file)
-            empleados = 0
-            for rows in reader:
-                print(type(rows[7]))
-                if self.getIdentificador() == rows[7]:
-                    empleados += 1
-            self.numEmpleados = empleados
-
-    def getNumEmpleados(self):
-        self.numeroEmpleados()
-        return self.numEmpleados
+    def __iter__(self):
 
     def __str__(self):
-        numeros = ''
-        empleados = self.getNumEmpleados()
-        #for numero in self.telefonos:
-        numeros += f'{numeros}, '
-        return f'Identificador de la sucursal: {self.identificador}.\nNombre: {self.nombre}\nDireccion: {self.direccion}\
-            \nTelefonos: {numeros}\nFecha de apertura: {self.fecha}\nNumero de empleados: {empleados}'
+        devuelve la informacion de los atributos
 
+    '''
+
+    def __init__(self, identificador, nombre, fechaDeApertura, direccion, telefonos):
+        '''
+        Constructor que crea todos los atributos necesarios para el objeto sucursal
+
+        Parametros
+        ----------
+        identificador: str
+        nombre: str
+            nombre de la sucursal
+        fechaDeApertura: str
+            fecha de apertura de la sucursal
+        direccion: str
+            direccion de la sucursal
+        telefonos: str
+            telefono de la sucursal
+
+        '''
+        super().__init__(identificador, nombre, fechaDeApertura, direccion, telefonos)
+
+    def __iter__(self):
+        '''Funcion iteradora de objeto que itera en cada uno de los atributos'''
+        return iter([self.identificador, self.nombre, self.fecha, self.direccion, self.telefonos])
+
+    def __str__(self):
+        '''Funcion que devuele la informacion de los atributos, humanamente legible'''
+        return f'Identificador de la sucursal: {self.identificador}.\nNombre: {self.nombre}\nDireccion: {self.direccion}\
+            \nTelefonos: {self.telefonos}\nFecha de apertura: {self.fecha}'
