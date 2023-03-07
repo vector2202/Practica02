@@ -1,8 +1,6 @@
 
 import Interfaz
 
-
-
 class Empleado(Interfaz.Interfaz):
     '''
     Clase que representa al empleado
@@ -68,13 +66,6 @@ class Empleado(Interfaz.Interfaz):
 
     def __str__(self):
         '''Funcion que devuelve la informacion de todos los atributos'''
-        numeros = ''
-        correos = ''
-        #for numero in self.telefonos:
-        numeros += f'{self.telefonos}, '
-        #for correo in self.:
-        correos += f'{self.correos}'
-
         return f'Identificador : {self.identificador}.\nNombre: {self.nombre}\nFechaNacimiento: {self.fecha}\nDireccion: {self.direccion}\Telefonos: {self.telefonos}\nCorreos: {self.correos}\nPuesto: {self.puesto}\nSucursal: {self.sucursal}'
 
     def __iter__(self):

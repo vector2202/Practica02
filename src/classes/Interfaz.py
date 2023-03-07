@@ -44,7 +44,7 @@ class Interfaz:
 
     '''
 
-    def __init__(self, identificador, nombre, fecha, direccion='', telefonos=[]):
+    def __init__(self, identificador, nombre, fecha, direccion='', telefonos=''):
         '''
         Constructor que crea los atributos necesarios para la interfaz.
 
