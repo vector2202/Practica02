@@ -66,7 +66,7 @@ class Empleado(Interfaz.Interfaz):
 
     def __str__(self):
         '''Funcion que devuelve la informacion de todos los atributos'''
-        return f'Identificador : {self.identificador}.\nNombre: {self.nombre}\nFechaNacimiento: {self.fecha}\nDireccion: {self.direccion}\Telefonos: {self.telefonos}\nCorreos: {self.correos}\nPuesto: {self.puesto}\nSucursal: {self.sucursal}'
+        return f'Identificador : {self.identificador}.\nNombre: {self.nombre}\nFecha de nacimiento: {self.fecha}\nDireccion: {self.direccion}\nTelefonos: {self.telefonos}\nCorreos: {self.correos}\nPuesto: {self.puesto}\nSucursal: {self.sucursal}'
 
     def __iter__(self):
         '''Funcion iteradora de objetos que pasa por cada uno de los objetos que se le pasen como parametros'''
