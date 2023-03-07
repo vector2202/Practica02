@@ -7,17 +7,29 @@ from Sucursal import Sucursal
 from Empleado import Empleado
 from Producto import Producto
 
+def getInt(mensaje, error,min, max):
+    while (True):
+        print(mensaje)
+        val = input()
+        if val.isnumeric():
+            if (int(val) < min or max < int(val)):
+                print(error)
+            else:
+                return str(val)
+        else:
+            print(error)
+
 def agregarEmpleado():
     '''Funcion que permite llenar los datos del empleado'''
     ID = str((Manejador.obtenerTamano('Empleado'))+1)
     print('El ID del nuevo empleado es ' + ID)
     nombre = input('Ingresa el nombre del empleado: ')
-    nacimiento = input('Ingresa su fecha de nacimiento: ')
+    nacimiento = getInt('Ingresa su fecha de nacimiento: ', 'Ingrese una fecha valida', 9999999, 100000000)
     direccion = input('Ingrese su dirección: ')
-    telefono = input('Ingrese su telefono: ')
+    telefono = getInt('Ingrese su telefono: ', 'Ingrese un numero valido', 99999999, 100000000)
     correo = input('Ingrese su correo: ')
     puesto = input('Ingrese su puesto: ')
-    sucursal = input('Ingrese su sucursal: ')
+    sucursal = getInt('Ingrese su sucursal: ', 'Ingrese una suucrsal valida', 0,100)
     Empleadonuevo = Empleado(ID,nombre,nacimiento,direccion,telefono,correo,puesto,sucursal)
     Manejador.agregar(Empleadonuevo,'Empleado')
 
@@ -27,13 +39,13 @@ def agregarProducto():
     ID = str((Manejador.obtenerTamano('Producto'))+1)
     print('El ID del nuevo producto es ' + ID)
     nombre = input('Ingresa el nombre del producto: ')
-    fechaPreparacion = input('Ingresa la fecha de preparación del producto: ')
+    fechaPreparacion = getInt('Ingresa la fecha de preparación del producto: : ', 'Ingrese una fecha valida', 9999999, 100000000)
     precio = input('Ingresa el precio del producto: ')
     cantidad = input('Ingresa la cantidad de productos que se tienen: ')
     marca = input('Ingresa la marca del producto: ')
     presentación= input('Ingresa la forma de presentación: ')
     refrigeracion = input('Ingresa si requiere refrigeración o no: ')
-    fechaCaducidad = input('Ingresa la fecha de caducidad: ')
+    fechaCaducidad = getInt('Ingresa la fecha de caducidad: ', 'Ingrese una fecha valida', 9999999, 100000000)
     ProductoNuevo = Producto(ID, nombre, fechaPreparacion,precio,cantidad,marca,presentación,refrigeracion,fechaCaducidad)
     Manejador.agregar(ProductoNuevo,'Producto')
    
@@ -43,9 +55,9 @@ def agregarSucursal():
     id = str(Manejador.obtenerTamano('Sucursal')+1)
     print('El ID de la nueva sucursal es: ' + id)
     nombre = input('Ingresa el nombre de la sucursal: ')
-    fechaApertura = input('Ingresa la fecha de Apertura: ')
+    fechaApertura = getInt('Ingresa su fecha de apertura: ', 'Ingrese una fecha valida.', 9999999, 100000000)
     direccion = input('Ingresa la direccion: ')
-    telefono= input('Ingresa los telefonos: ')
+    telefono= getInt('Ingrese su telefono: ', 'Ingrese un numero valido', 9999999, 1000000000)
     SucursalNueva = Sucursal(id, nombre, fechaApertura,direccion,telefono)
     Manejador.agregar(SucursalNueva,'Sucursal')
 
